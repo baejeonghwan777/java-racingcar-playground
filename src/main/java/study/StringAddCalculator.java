@@ -6,12 +6,11 @@ import java.util.regex.Pattern;
 
 public class StringAddCalculator {
     static Scanner scanner = new Scanner(System.in);
-    private int result;
+    static final int INIT_NUMBER = 0;
 
-    public void add() {
+    public int run() {
         String input = inputNumber();
-        result = splitAndSum(input);
-        printResult();
+        return splitAndSum(input);
     }
 
     public String inputNumber() {
@@ -36,12 +35,13 @@ public class StringAddCalculator {
 
     public int patternMatch(String input) {
         Matcher matcher = Pattern.compile("//(.)\n(.*)").matcher(input);
-        String[] inputs = new String[0];
+        String[] inputs;
         if(matcher.find()) {
             String customDelimiter = matcher.group(1);
             inputs = matcher.group(2).split(customDelimiter);
+            return sumNumber(inputs);
         }
-        return sumNumber(inputs);
+        return sumNumber(new String[INIT_NUMBER]);
     }
 
     public int sumNumber(String[] inputs) {
@@ -54,9 +54,5 @@ public class StringAddCalculator {
             }
             return sum;
         } catch (Exception e) { throw new RuntimeException(e); }
-    }
-
-    public void printResult() {
-        System.out.println(result);
     }
 }

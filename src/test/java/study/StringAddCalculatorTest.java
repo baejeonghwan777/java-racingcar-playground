@@ -19,10 +19,14 @@ public class StringAddCalculatorTest {
     @Test
     public void nullAndEmptyTest() {
         int expected = 0; // give
+
         int result = calculator.splitAndSum(null); // when
+
         assertThat(result).isEqualTo(expected); // then
 
+
         result = calculator.splitAndSum(""); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
@@ -30,7 +34,9 @@ public class StringAddCalculatorTest {
     @Test
     public void oneNumberTest() {
         int expected = 1; // give
+
         int result = calculator.splitAndSum("1"); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
@@ -38,7 +44,9 @@ public class StringAddCalculatorTest {
     @Test
     public void restDelimiterTest() {
         int expected = 3; // give
+
         int result = calculator.splitAndSum("1,2"); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
@@ -46,7 +54,9 @@ public class StringAddCalculatorTest {
     @Test
     public void colonDelimiterTest() {
         int expected = 3; // give
+
         int result = calculator.splitAndSum("1:2"); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
@@ -54,7 +64,9 @@ public class StringAddCalculatorTest {
     @Test
     public void complexDelimiterTest() {
         int expected = 6; // give
+
         int result = calculator.splitAndSum("1,2:3"); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
@@ -62,7 +74,9 @@ public class StringAddCalculatorTest {
     @Test
     public void customDelimiterTest() {
         int expected = 6; // give
+
         int result = calculator.splitAndSum("//;\n1;2;3"); // when
+
         assertThat(result).isEqualTo(expected); // then
     }
 
