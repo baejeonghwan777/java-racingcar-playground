@@ -6,7 +6,11 @@ public class Car {
 
     public Car(int value, String name) {
         this.location = new Location(value);
-        if (name.length() <= 5) this.name = name;
+        if(isValidName(name)) this.name = name;
+    }
+
+    public boolean isValidName(String name) {
+        return name.length() <= 5;
     }
 
     public StringBuilder forward(int input) {

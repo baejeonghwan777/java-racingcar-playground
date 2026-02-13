@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -25,7 +24,7 @@ public class CarRacingTest {
     public void nameTest() {
         String name = "apple,eddy,mico";
 
-        String[] names = racing.validCarName(name);
+        String[] names = InputView.validCarName(name);
 
         assertThat(names).isEqualTo(new String[]{"apple","eddy","mico"});
     }
@@ -35,7 +34,7 @@ public class CarRacingTest {
     public void nameTestInValid() {
         String name = "ppppppp";
 
-        String[] names = racing.validCarName(name);
+        String[] names = InputView.validCarName(name);
 
         assertThat(names).isEqualTo(new String[INIT_NUMBER]);
     }
