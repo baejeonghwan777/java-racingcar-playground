@@ -3,6 +3,7 @@ package study;
 import java.util.List;
 
 public class OutputView {
+
     public static void printCarRacing(int tryNumber, Cars cars) {
         for (int i = 0; i < tryNumber; i++) {
             for (int j = 0; j < cars.lookUpLength(); j++) {
@@ -12,8 +13,10 @@ public class OutputView {
         }
     }
 
-    public static void printWinners(List<String> winners) {
-        String result = String.join(",", winners);
+    public static String printWinners(List<String> winners) {
+        String result;
+        result = String.join(",", winners);
         System.out.println(result + "가 최종 우승했습니다.");
+        return result;
     }
 }

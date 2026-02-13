@@ -113,6 +113,21 @@ public class CarRacingTest {
         assertThat(expected).isEqualTo(result);
     }
 
+    @DisplayName("최대 거리를 간 자동차들 이름을 저장한 문자형 배열이 하나로 잘 합쳐졌는지 확인한다.") // 출력관련 TDD
+    @Test
+    public void winnerJoinCheck() {
+        String expected = "frog,front";
+
+        cars.addCar(new String[]{"mice"},2); // 원래는 한꺼번에 추가하기 위해 문자열 배열을 쓰지만
+        cars.addCar(new String[]{"frog"},5); // 다른 로케이션 값을 추가하기 위해 따로 작성한다.
+        cars.addCar(new String[]{"front"},5);
+
+        List<String> winner = racing.searchWinner(5);
+        String result = OutputView.printWinners(winner);
+
+        assertThat(expected).isEqualTo(result);
+    }
+
     @DisplayName("특정 입력값을 주었을 때 자동차가 전진하여 거리가 늘어나는지 확인한다.")
     @Test
     public void forwardCheck() {
