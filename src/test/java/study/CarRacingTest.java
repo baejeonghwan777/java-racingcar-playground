@@ -16,8 +16,7 @@ public class CarRacingTest {
 
     @BeforeEach
     public void setUp() {
-        List<Car> carList = new ArrayList<>();
-        cars = new Cars(carList);
+        cars = new Cars();
         racing = new CarRacing(cars);
     }
 

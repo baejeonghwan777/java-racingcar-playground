@@ -2,27 +2,24 @@ package study;
 
 public class Car {
     private String name;
-    private int location;
+    private final Location location;
 
-    public Car(int location, String name) {
-        if (location >= 0) this.location = location;
-        if (location < 0) this.location = 0;
+    public Car(int value, String name) {
+        this.location = new Location(value);
         if (name.length() <= 5) this.name = name;
     }
 
     public StringBuilder forward(int input) {
-        if (input >= 4) location++;
+        location.increase(input);
         return printLocation();
     }
 
     public StringBuilder printLocation() {
-        StringBuilder moving = new StringBuilder();
-        for (int i = 0; i < location; i++) moving.append("-");
-        return moving;
+        return location.printLocation();
     }
 
     public int getLocation() {
-        return location;
+        return location.getValue();
     }
 
     public String getName() {

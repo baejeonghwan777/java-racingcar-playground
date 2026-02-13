@@ -8,7 +8,7 @@ public class Cars {
     static final int RAND_MIN = 0;
     private final List<Car> cars;
 
-    public Cars(List<Car> cars) {
+    public Cars() {
         this.cars = new ArrayList<>();
     }
 

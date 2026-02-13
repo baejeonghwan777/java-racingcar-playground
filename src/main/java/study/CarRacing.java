@@ -1,13 +1,16 @@
 package study;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.regex.PatternSyntaxException;
 
 public class CarRacing {
-    static final int INIT_NUMBER = 0;
+    private static final int INIT_NUMBER = 0;
     static Scanner scanner = new Scanner(System.in);
-    static String[] names;
-    Cars cars;
+    private final Cars cars;
 
     public CarRacing(Cars cars) {
         this.cars = cars;
@@ -51,7 +54,7 @@ public class CarRacing {
     }
 
     public int makeCarObject() {
-        names = makeCarName();
+        String[] names = makeCarName();
         int tryNumber = inputTryNumber();
         cars.addCar(names, INIT_NUMBER);
         return tryNumber;
